@@ -130,19 +130,28 @@
     
     new1.backgroundColor = [UIColor purpleColor];
     
-    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(20)];
+    //NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(20)];
     
-    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:(-20)];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeRight multiplier:1 constant:(-20)];
     
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:(-20)];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeBottom multiplier:1 constant:(-20)];
     
-    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeLeft relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:(20)];
+   // NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeLeft relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:(20)];
+    
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeWidth multiplier: 0.6 constant: 1];
+    
+     NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier: 1 constant: 50];
     
     
-    topConstraint.active =YES;
+//    One constraint will set the height of purple box to a fixed size of 50 points. Since this constraint is not in relation to another our View, set toItem to nil and toItem's attribute to NSLayoutAttributeNotAnAttribute.
+    
+    
+   // topConstraint.active =YES;
     rightConstraint.active = YES;
     bottomConstraint.active = YES;
-    leftConstraint.active = YES;
+  //  leftConstraint.active = YES;
+    widthConstraint.active = YES;
+    heightConstraint.active = YES;
     
     
 }
