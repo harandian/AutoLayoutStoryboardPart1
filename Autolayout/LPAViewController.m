@@ -24,13 +24,6 @@
 @end
 
 
-//
-//Next, we will add 4 constraints (using NSLayoutConstraint constraintWithItem).
-//
-//One constraint will set the purple box's right margin equal to a 20 points offset to framingView's right margin
-//One constraint will set the purple box's bottom margin equal to a 20 points offset to framingView's bottom margin
-//One constraint will set the width of purple box to (305.0/500.0) of the framingView's width. Use the multipler property to set this.
-//One constraint will set the height of purple box to a fixed size of 50 points. Since this constraint is not in relation to another our View, set toItem to nil and toItem's attribute to NSLayoutAttributeNotAnAttribute.
 @implementation LPAViewController
 
 - (void)viewDidLoad
@@ -119,28 +112,28 @@
     
     // Set up your views and constraints here
     
-    UIView *new1 = [[UIView alloc] init];
+    UIView *purpleBox = [[UIView alloc] init];
     
     
-    [self.view addSubview:new1];
+    [self.framingView addSubview:purpleBox];
     
-    new1.frame = CGRectZero;
+    purpleBox.frame = CGRectZero;
     
-    new1.translatesAutoresizingMaskIntoConstraints = NO;
+    purpleBox.translatesAutoresizingMaskIntoConstraints = NO;
     
-    new1.backgroundColor = [UIColor purpleColor];
+    purpleBox.backgroundColor = [UIColor purpleColor];
     
     //NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(20)];
     
-    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeRight multiplier:1 constant:(-20)];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:purpleBox attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeRight multiplier:1 constant:(-20)];
     
-    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeBottom multiplier:1 constant:(-20)];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:purpleBox attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeBottom multiplier:1 constant:(-20)];
     
    // NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeLeft relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:(20)];
     
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeWidth multiplier: 0.6 constant: 1];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:purpleBox attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeWidth multiplier: 0.6 constant: 1];
     
-     NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier: 1 constant: 50];
+     NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:purpleBox attribute:NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier: 1 constant: 50];
     
     
 //    One constraint will set the height of purple box to a fixed size of 50 points. Since this constraint is not in relation to another our View, set toItem to nil and toItem's attribute to NSLayoutAttributeNotAnAttribute.
@@ -153,6 +146,29 @@
     widthConstraint.active = YES;
     heightConstraint.active = YES;
     
+    
+//    Add a 150 point tall yellow view to the green view, and make it be always as wide as the green view. Add a constraint so that the bottom edge of the yellow view always aligns with the bottom edge of the green view. Add a button that shows or hides the yellow view (by setting the ‘hidden’ property on the yellow view). When the yellow view is hidden, the the other views should align as shown above. When the yellow view is shown, the views that have constraints that involve the bottom edge of the green view should refer to the top edge of the yellow view instead. This will mean that the three blue views will not fit all above the yellow box in every size; if they do not, they should be evenly spaced between the top and bottom edges of the green box instead. Refer to the idea of priority in layout constraints in order to figure this out.
+    
+    UIView  *yellowBox = [[UIView alloc] init];
+    
+    [self.framingView addSubview: yellowBox];
+    
+    yellowBox.frame = CGRectZero;
+    
+    yellowBox.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    yellowBox.backgroundColor = [UIColor yellowColor];
+    
+
+    NSLayoutConstraint *heightConstraintYellow = [NSLayoutConstraint constraintWithItem:yellowBox attribute:NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier: 1 constant: 150];
+//
+    NSLayoutConstraint *widthConstraintYellow = [NSLayoutConstraint constraintWithItem:yellowBox attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeWidth multiplier:1 constant:1];
+    
+    NSLayoutConstraint *bottomConstraintYellow = [NSLayoutConstraint constraintWithItem:yellowBox attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.framingView attribute:NSLayoutAttributeBottom multiplier:1 constant:1];
+    
+    heightConstraintYellow.active = YES;
+    widthConstraintYellow.active = YES;
+    bottomConstraintYellow.active = YES;
     
 }
 
