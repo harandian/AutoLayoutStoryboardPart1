@@ -17,9 +17,20 @@
 @property (nonatomic, weak) UIView *framingView;
 @property (nonatomic, weak) NSLayoutConstraint *framingViewHeightConstraint;
 @property (nonatomic, weak) NSLayoutConstraint *framingViewWidthConstraint;
+//@property (nonatomic, weak) UIView *View1;
+
+
 
 @end
 
+
+//
+//Next, we will add 4 constraints (using NSLayoutConstraint constraintWithItem).
+//
+//One constraint will set the purple box's right margin equal to a 20 points offset to framingView's right margin
+//One constraint will set the purple box's bottom margin equal to a 20 points offset to framingView's bottom margin
+//One constraint will set the width of purple box to (305.0/500.0) of the framingView's width. Use the multipler property to set this.
+//One constraint will set the height of purple box to a fixed size of 50 points. Since this constraint is not in relation to another our View, set toItem to nil and toItem's attribute to NSLayoutAttributeNotAnAttribute.
 @implementation LPAViewController
 
 - (void)viewDidLoad
@@ -107,6 +118,31 @@
 
     
     // Set up your views and constraints here
+    
+    UIView *new1 = [[UIView alloc] init];
+    
+    
+    [self.view addSubview:new1];
+    
+    new1.frame = CGRectZero;
+    
+    new1.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    new1.backgroundColor = [UIColor purpleColor];
+    
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(20)];
+    
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:(-20)];
+    
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:(-20)];
+    
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:new1 attribute:NSLayoutAttributeLeft relatedBy: NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:(20)];
+    
+    
+    topConstraint.active =YES;
+    rightConstraint.active = YES;
+    bottomConstraint.active = YES;
+    leftConstraint.active = YES;
     
     
 }
