@@ -215,23 +215,243 @@
                                                                                 constant: 50];
     heightConstraintBlueBox1.active = YES;
     
-//    CGPoint viewCenter = framingView.center;
-//    
-//    blueBox1.center = viewCenter;
-//    
-//    blueBox1.frame.size.height
-//    
-//    CGRect frame = blueBox1.frame;
-//    
-//    frame.size.height=50;
-//    frame.size.width=50;
-//    blueBox1.frame = frame;
+
+    UIView  *blueBox2 = [[UIView alloc] init];
     
-//    blueBox1.center = self.framingView.center;
+    [self.framingView addSubview: blueBox2];
     
-//    yConstraintBlueBox1.active = YES;
- 
+    blueBox2.frame = CGRectZero;
     
+    blueBox2.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    blueBox2.backgroundColor = [UIColor blueColor];
+    
+    NSLayoutConstraint *widthConstraintBlueBox2 = [NSLayoutConstraint constraintWithItem:blueBox2
+                                                                               attribute:NSLayoutAttributeWidth
+                                                                               relatedBy: NSLayoutRelationEqual
+                                                                                  toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                              multiplier: 1
+                                                                                constant: 50];
+    widthConstraintBlueBox2.active = YES;
+    
+    NSLayoutConstraint *heightConstraintBlueBox2 = [NSLayoutConstraint constraintWithItem:blueBox2
+                                                                                attribute:NSLayoutAttributeHeight
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                               multiplier: 1
+                                                                                 constant: 50];
+    heightConstraintBlueBox2.active = YES;
+
+    
+    
+    NSLayoutConstraint *xConstraintBlueBox2 = [NSLayoutConstraint constraintWithItem:blueBox2
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                          multiplier: 1
+                                                                            constant: 0];
+    xConstraintBlueBox2.active = YES;
+    
+    NSLayoutConstraint *yConstraintBlueBox2 = [NSLayoutConstraint constraintWithItem:blueBox2
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                          multiplier: 0.5
+                                                                            constant: 0];
+    yConstraintBlueBox2.active = YES;
+    
+    
+    UIView  *blueBox3 = [[UIView alloc] init];
+    
+    [self.framingView addSubview: blueBox3];
+    
+    blueBox3.frame = CGRectZero;
+    
+    blueBox3.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    blueBox3.backgroundColor = [UIColor blueColor];
+    
+    NSLayoutConstraint *widthConstraintBlueBox3 = [NSLayoutConstraint constraintWithItem:blueBox3
+                                                                               attribute:NSLayoutAttributeWidth
+                                                                               relatedBy: NSLayoutRelationEqual
+                                                                                  toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                              multiplier: 1
+                                                                                constant: 50];
+    widthConstraintBlueBox3.active = YES;
+    
+    NSLayoutConstraint *heightConstraintBlueBox3 = [NSLayoutConstraint constraintWithItem:blueBox3
+                                                                                attribute:NSLayoutAttributeHeight
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                               multiplier: 1
+                                                                                 constant: 50];
+    heightConstraintBlueBox3.active = YES;
+    
+    
+    
+    NSLayoutConstraint *xConstraintBlueBox3 = [NSLayoutConstraint constraintWithItem:blueBox3
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                          multiplier: 1
+                                                                            constant: 0];
+    xConstraintBlueBox3.active = YES;
+    
+    NSLayoutConstraint *yConstraintBlueBox3 = [NSLayoutConstraint constraintWithItem:blueBox3
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeCenterY
+                                               
+                                                                          multiplier: 1.5
+                                               
+                                                                            constant: 0];
+    yConstraintBlueBox3.active = YES;
+    
+    
+    UIView  *redBox = [[UIView alloc] init];
+    
+    [self.framingView addSubview: redBox];
+    
+    redBox.frame = CGRectZero;
+    
+    redBox.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    redBox.backgroundColor = [UIColor redColor];
+    
+    NSLayoutConstraint *widthConstraintRedBox = [NSLayoutConstraint constraintWithItem:redBox
+                                                                               attribute:NSLayoutAttributeWidth
+                                                                               relatedBy: NSLayoutRelationEqual
+                                                                                  toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                              multiplier: 1
+                                                                                constant: 150];
+    widthConstraintRedBox.active = YES;
+    
+    NSLayoutConstraint *heightConstraintRedBox = [NSLayoutConstraint constraintWithItem:redBox
+                                                                                attribute:NSLayoutAttributeHeight
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                               multiplier: 1
+                                                                                 constant: 50];
+    heightConstraintRedBox.active = YES;
+    
+    
+    
+    NSLayoutConstraint *topConstraintRedBox = [NSLayoutConstraint constraintWithItem:redBox
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeTop
+                                                                          multiplier: 1
+                                                                            constant: 20];
+    topConstraintRedBox.active = YES;
+    
+    NSLayoutConstraint *bottomConstraintRedBox = [NSLayoutConstraint constraintWithItem:redBox
+                                                                           attribute:NSLayoutAttributeRight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.framingView
+                                                                           attribute:NSLayoutAttributeRight
+                                                                          multiplier: 1
+                                                                            constant: -20];
+    bottomConstraintRedBox.active = YES;
+
+
+    
+    UIView  *orangeBox1 = [[UIView alloc] init];
+    
+    [redBox addSubview: orangeBox1];
+    
+    orangeBox1.frame = CGRectZero;
+    
+    orangeBox1.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    orangeBox1.backgroundColor = [UIColor orangeColor];
+    
+    NSLayoutConstraint *widthConstraintOrangeBox1 = [NSLayoutConstraint constraintWithItem:orangeBox1
+                                                                             attribute:NSLayoutAttributeWidth
+                                                                             relatedBy: NSLayoutRelationEqual
+                                                                                toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                            multiplier: 1
+                                                                              constant: 70];
+    widthConstraintOrangeBox1.active = YES;
+    
+    NSLayoutConstraint *heightConstraintOrangeBox1 = [NSLayoutConstraint constraintWithItem:orangeBox1
+                                                                              attribute:NSLayoutAttributeHeight
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                             multiplier: 1
+                                                                               constant: 30];
+    heightConstraintOrangeBox1.active = YES;
+    
+    
+    
+    NSLayoutConstraint *yConstraintOrangeBox1 = [NSLayoutConstraint constraintWithItem:orangeBox1
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:redBox
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                          multiplier: 1
+                                                                            constant: 1];
+    yConstraintOrangeBox1.active = YES;
+    
+    NSLayoutConstraint *rightConstraintOrangeBox1 = [NSLayoutConstraint constraintWithItem:orangeBox1
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:redBox
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                             multiplier: 1
+                                                                               constant: 10];
+    rightConstraintOrangeBox1.active = YES;
+
+
+    UIView  *orangeBox2 = [[UIView alloc] init];
+    
+    [redBox addSubview: orangeBox2];
+    
+    orangeBox2.frame = CGRectZero;
+    
+    orangeBox2.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    orangeBox2.backgroundColor = [UIColor orangeColor];
+    
+    NSLayoutConstraint *widthConstraintOrangeBox2 = [NSLayoutConstraint constraintWithItem:orangeBox2
+                                                                                 attribute:NSLayoutAttributeWidth
+                                                                                 relatedBy: NSLayoutRelationEqual
+                                                                                    toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                                multiplier: 1
+                                                                                  constant: 50];
+    widthConstraintOrangeBox2.active = YES;
+    
+    NSLayoutConstraint *heightConstraintOrangeBox2 = [NSLayoutConstraint constraintWithItem:orangeBox2
+                                                                                  attribute:NSLayoutAttributeHeight
+                                                                                  relatedBy:NSLayoutRelationEqual
+                                                                                     toItem:nil                                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                                                 multiplier: 1
+                                                                                   constant: 30];
+    heightConstraintOrangeBox2.active = YES;
+    
+    
+    
+    NSLayoutConstraint *yConstraintOrangeBox2 = [NSLayoutConstraint constraintWithItem:orangeBox2
+                                                                             attribute:NSLayoutAttributeCenterY
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:redBox
+                                                                             attribute:NSLayoutAttributeCenterY
+                                                                            multiplier: 1
+                                                                              constant: 0];
+    yConstraintOrangeBox2.active = YES;
+    
+    NSLayoutConstraint *rightConstraintOrangeBox2 = [NSLayoutConstraint constraintWithItem:orangeBox2
+                                                                                 attribute:NSLayoutAttributeRight
+                                                                                 relatedBy:NSLayoutRelationEqual
+                                                                                    toItem:redBox
+                                                                                 attribute:NSLayoutAttributeRight
+                                                                                multiplier: 1
+                                                                                  constant: -10];
+    rightConstraintOrangeBox2.active = YES;
 }
 
 /**
